@@ -6,6 +6,15 @@ export const PlanetSchema = new Schema(
         style: { type: String, required: true }
     },
     {
-        timestamps: true
+        timestamps: true,
+        toJSON: { virtuals: true }
     }
 )
+
+PlanetSchema.virtual('creator', {
+    localField: 'creatorId',
+    ref: 'Account',
+    foreignField: '_id',
+    justOne: true
+
+})

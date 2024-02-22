@@ -6,7 +6,7 @@ import { PlanetSchema } from '../models/planet.js'
 class DbContext {
   Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
-  Animals = mongoose.model('Planet', PlanetSchema)
+  Planets = mongoose.model('Planet', PlanetSchema)
 }
 
 export const dbContext = new DbContext()
